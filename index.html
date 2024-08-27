@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Salud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,7 +52,62 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut blanditiis et facilis quasi voluptas, distinctio dolorum saepe officia ut perspiciatis nihil nesciunt quidem placeat rerum excepturi reprehenderit! Nesciunt, expedita enim.
             </p>
         </div>
-
     </section>
+
+    <main class="servicios">
+        <h2>Servicios</h2>
+        <div class="servicios-content container">
+        </div>
+        <div class="servicio-1">
+            <i class="fa-sharp fa-solid fa-hospital-user"></i>
+            <h3>Pediatria</h3>
+        </div>
+        <div class="servicio-1">
+            <i class="fa-sharp fa-solid fa-stethoscope"></i>
+            <h3>Dermatologia</h3>
+        </div>
+        <div class="servicio-1">
+            <i class="fa-solid fa-hospital"></i>
+            <h3>Cardiología</h3>
+        </div>
+    </main>
+
+    <section class="formulario container">
+        <form method="post" autocomplete="off">
+            <h2>Agenda consulta</h2>
+        <div class="input-group">
+            <div class="input-container">
+                <input type="text" name="name" placeholder="Nombre y Apellido">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-container">
+                <input type="tel" name="phone" placeholder="Telefono Celular">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="input-container">
+                <input type="email" name="email" placeholder="Correo">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-container">
+                <textarea name="message" placeholder="Detalles de la consulta"></textarea>
+            </div>
+            <input type="submit" name="send" class="btn" onClick="myFunction()">
+        </div>
+        </form>
+    </section>
+
+    <footer class="footer-content container">
+        <div class="link">
+            <a href="#" class="logo">logo</a>
+        </div>
+        <div class="link">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
