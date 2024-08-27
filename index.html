@@ -96,7 +96,8 @@
         </form>
     </section>
 
-    <footer class="footer-content container">
+    <footer class="footer">
+    <div class="footer-content container">
         <div class="link">
             <a href="#" class="logo">logo</a>
         </div>
@@ -108,6 +109,17 @@
                 <li><a href="#">Contacto</a></li>
             </ul>
         </div>
+    </div>
     </footer>
+
+    <?php
+        include("send.php");
+    ?>
+
+    <script>
+        function myFunction(){
+            window.location.href="http://localhost/pagina"
+        }
+    </script>
 </body>
 </html>
