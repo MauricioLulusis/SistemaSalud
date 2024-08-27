@@ -57,7 +57,7 @@ img {
     color: #02b1f4;
 }
 
-.logo {
+.medicina-integral {
     font-size: 25px;
     font-weight: 800;
     color: #02b1f4;
@@ -249,4 +249,33 @@ textarea {
     color: #FFFFFF;
     font-size: 15px;
     cursor: pointer;
+}
+
+.footer{
+    padding: 50px;
+    background-color: #fafafa;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link ul li{
+    margin-right: 50px;
+}
+
+.link ul li a {
+    color: #323232;
+    font-size: 17px;
+}
+
+.link ul li a:hover{
+    color: #02b1f4;
 }
