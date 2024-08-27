@@ -1,26 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,800;0,900;1,600&display=swap');
 
-body{
+
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body {
     font-family: 'Poppins', sans-serif;
 }
-img{
+
+img {
     max-width: 100%;
 }
 
-.container{
+.container {
     max-width: 1100px;
     margin: 0 auto;
 }
 
-.header{
+.header {
     background-color: #fafafa;
-    padding: 150px 0 100px 0; 
+    padding: 150px 0 100px 0;
     min-height: 70vh;
     display: flex;
     align-items: center;
 }
 
-.menu{
+.menu {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,50 +40,52 @@ img{
     align-items: center;
     justify-content: space-between;
 }
-.menu .navbar ul li{
+
+.menu .navbar ul li {
     position: relative;
     float: left;
 }
 
-.menu .navbar ul li a{
+.menu .navbar ul li a {
     font-size: 18px;
     padding: 20px;
     color: #323232;
     display: block;
 }
 
-.menu .navbar ul li a:hover{
+.menu .navbar ul li a:hover {
     color: #02b1f4;
 }
 
-.logo{
+.logo {
     font-size: 25px;
     font-weight: 800;
     color: #02b1f4;
     text-transform: uppercase;
 }
 
-#menu{
+#menu {
     display: none;
 }
 
-.menu-icono{
+.menu-icono {
     width: 25px;
 }
 
-.menu label{
+.menu label {
     cursor: pointer;
     display: none;
 }
 
-.header-content{
+.header-content {
     display: flex;
 }
 
-.header-txt{
+.header-txt {
     width: 50%;
 }
-.header-txt h1{
+
+.header-txt h1 {
     line-height: 1;
     color: #323232;
     text-transform: uppercase;
@@ -80,86 +93,160 @@ img{
     margin-bottom: 10px;
 }
 
-.header-txt p{
+.header-txt p {
     font-size: 16px;
     color: #818181;
     margin-bottom: 45px;
 }
 
-.header-img{
+.header-img {
     width: 50%;
 }
 
-.btn-1{
+.btn-1 {
     display: inline-block;
     padding: 11px 25px;
-    background-color: #02b1f4 ;
+    background-color: #02b1f4;
     color: #FFFFFF;
     border-radius: 15px;
 }
 
-.about{
-    padding: 10px 0;
+.about {
+    padding: 100px 0;
     display: flex;
 }
 
-.about-img{
+.about-img {
     width: 50%;
 }
 
-.about-img img{
-    width: 50%;
+.about-img img {
+    width: 500%;
     border-radius: 15px;
 }
 
-.about-txt{
+.about-txt {
     width: 50%;
     margin-left: 25px;
 }
 
-.about-txt h2{
+.about-txt h2 {
     color: #323232;
     font-size: 50px;
     margin-bottom: 15px;
 }
 
-
-.about-txt p{
+.about-txt p {
     font-size: 16px;
     color: #818181;
 }
 
-.servicios{
+.servicios {
     padding: 50px 0 100px 0;
     text-align: center;
     background-color: #fafafa;
 }
-.servicios h2{
+
+.servicios h2 {
     color: #323232;
     font-size: 50px;
     margin-bottom: 15px;
 }
 
-.servicios-content{
+.servicios-content {
     margin-top: 55px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.servicio-1{
+.servicio-1 {
     padding: 25px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.01);
     flex-basis: calc(25%-20px);
 }
 
-.servicio-1 i{
+.servicio-1 i {
     font-size: 30px;
     color: #02b1f4;
     margin-bottom: 15px;
 }
 
-.servicio-1 h3{
+.servicio-1 h3 {
     font-size: 20px;
     color: #323232;
     text-transform: capitalize;
+}
+
+.formulario {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding: 50px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+form h2 {
+    font-size: 25px;
+    color: #323232;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container>i {
+    padding: 14px;
+    border-radius: 50%;
+    background-color: #02b1f4;
+    color: #FFFFFF;
+    position: absolute;
+    font-size: 20px;
+    top: 4px;
+    left: 10px;
+}
+
+.input-container>input,
+textarea {
+    padding: 17px 15px 17px 65px;
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 35px;
+    background-color: transparent;
+    border: 2px solid #02b1f4;
+    font-size: 16px;
+    outline: none;
+    color: #323232;
+}
+
+textarea {
+    font-family: 'Poppins', sans-serif;
+    height: 150px;
+}
+
+::placeholder {
+    color: #a8a8a8;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #02b1f4;
+    padding: 17px 30px;
+    width: 100%;
+    border: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 15px;
+    cursor: pointer;
 }
