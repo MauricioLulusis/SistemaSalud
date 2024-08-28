@@ -28,8 +28,8 @@ img {
 /* Estilo del encabezado */
 .header {
     background-color: #fafafa;
-    padding: 150px 0 100px 0;
-    min-height: 70vh;
+    padding: 50px 0 50px 0;
+    min-height: 15vh;
     display: flex;
     align-items: center;
 }
