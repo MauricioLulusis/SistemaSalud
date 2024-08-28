@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,800;0,900;1,600&display=swap');
 
-
+/* Reiniciar márgenes, rellenos, y establecer box-sizing para todos los elementos */
 * {
     margin: 0;
     padding: 0%;
@@ -9,20 +9,23 @@
     list-style: none;
 }
 
-
+/* Configurar la fuente principal del documento */
 body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Ajustar la imagen para que nunca exceda el ancho de su contenedor */
 img {
     max-width: 100%;
 }
 
+/* Configurar el contenedor principal con un ancho máximo y centrado */
 .container {
     max-width: 1100px;
     margin: 0 auto;
 }
 
+/* Estilo del encabezado */
 .header {
     background-color: #fafafa;
     padding: 150px 0 100px 0;
@@ -31,6 +34,7 @@ img {
     align-items: center;
 }
 
+/* Menú de navegación, incluyendo posición y estilos */
 .menu {
     position: absolute;
     top: 0;
@@ -41,11 +45,13 @@ img {
     justify-content: space-between;
 }
 
+/* Configuración de los elementos del menú */
 .menu .navbar ul li {
     position: relative;
     float: left;
 }
 
+/* Estilo de los enlaces del menú */
 .menu .navbar ul li a {
     font-size: 18px;
     padding: 20px;
@@ -53,10 +59,12 @@ img {
     display: block;
 }
 
+/* Efecto hover en los enlaces del menú */
 .menu .navbar ul li a:hover {
     color: #02b1f4;
 }
 
+/* Estilo del logotipo de "Medicina Integral" */
 .medicina-integral {
     font-size: 25px;
     font-weight: 800;
@@ -64,27 +72,33 @@ img {
     text-transform: uppercase;
 }
 
+/* Ocultar el checkbox del menú */
 #menu {
     display: none;
 }
 
+/* Estilo del icono del menú */
 .menu-icono {
     width: 25px;
 }
 
+/* Mostrar el icono del menú solo en pantallas pequeñas */
 .menu label {
     cursor: pointer;
     display: none;
 }
 
+/* Estilo del contenido del encabezado */
 .header-content {
     display: flex;
 }
 
+/* Estilo del texto en el encabezado */
 .header-txt {
     width: 50%;
 }
 
+/* Estilo del título principal en el encabezado */
 .header-txt h1 {
     line-height: 1;
     color: #323232;
@@ -93,16 +107,19 @@ img {
     margin-bottom: 10px;
 }
 
+/* Estilo del párrafo en el encabezado */
 .header-txt p {
     font-size: 16px;
     color: #818181;
     margin-bottom: 45px;
 }
 
+/* Estilo de la imagen en el encabezado */
 .header-img {
     width: 50%;
 }
 
+/* Estilo del botón principal en el encabezado */
 .btn-1 {
     display: inline-block;
     padding: 11px 25px;
@@ -111,48 +128,57 @@ img {
     border-radius: 15px;
 }
 
+/* Sección "Nosotros" */
 .about {
     padding: 100px 0;
     display: flex;
 }
 
+/* Imagen en la sección "Nosotros" */
 .about-img {
     width: 50%;
 }
 
+/* Ajustar la imagen de la sección "Nosotros" */
 .about-img img {
     width: 500%;
     border-radius: 15px;
 }
 
+/* Texto en la sección "Nosotros" */
 .about-txt {
     width: 50%;
     margin-left: 25px;
 }
 
+/* Título en la sección "Nosotros" */
 .about-txt h2 {
     color: #323232;
     font-size: 50px;
     margin-bottom: 15px;
 }
 
+/* Párrafo en la sección "Nosotros" */
 .about-txt p {
     font-size: 16px;
     color: #818181;
 }
 
+/* Sección de "Servicios" */
 .servicios {
     padding: 50px 0 100px 0;
     text-align: center;
     background-color: #fafafa;
 }
 
+/* Título de la sección "Servicios" */
 .servicios h2 {
     color: #323232;
     font-size: 50px;
     margin-bottom: 15px;
 }
 
+/* Contenedor de los servicios */
 .servicios-content {
     margin-top: 55px;
     display: flex;
@@ -161,24 +187,28 @@ img {
     flex-wrap: wrap;
 }
 
+/* Estilo de cada servicio */
 .servicio-1 {
     padding: 25px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.01);
     flex-basis: calc(25%-20px);
 }
 
+/* Iconos en los servicios */
 .servicio-1 i {
     font-size: 30px;
     color: #02b1f4;
     margin-bottom: 15px;
 }
 
+/* Título de cada servicio */
 .servicio-1 h3 {
     font-size: 20px;
     color: #323232;
     text-transform: capitalize;
 }
 
+/* Sección de formulario */
 .formulario {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -187,6 +217,7 @@ img {
     align-items: center;
 }
 
+/* Estilo general del formulario */
 form {
     padding: 50px;
     width: 500px;
@@ -194,6 +225,7 @@ form {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Título del formulario */
 form h2 {
     font-size: 25px;
     color: #323232;
@@ -201,10 +233,12 @@ form h2 {
     margin-bottom: 35px;
 }
 
+/* Contenedor de los inputs */
 .input-container {
     position: relative;
 }
 
+/* Iconos dentro de los inputs */
 .input-container>i {
     padding: 14px;
     border-radius: 50%;
@@ -216,6 +250,7 @@ form h2 {
     left: 10px;
 }
 
+/* Estilo de los inputs y textarea */
 .input-container>input,
 textarea {
     padding: 17px 15px 17px 65px;
@@ -229,16 +264,19 @@ textarea {
     color: #323232;
 }
 
+/* Estilo específico para textarea */
 textarea {
     font-family: 'Poppins', sans-serif;
     height: 150px;
 }
 
+/* Estilo del texto de los placeholders */
 ::placeholder {
     color: #a8a8a8;
     font-size: 16px;
 }
 
+/* Estilo del botón de envío en el formulario */
 .btn {
     background-color: #02b1f4;
     padding: 17px 30px;
@@ -251,31 +289,168 @@ textarea {
     cursor: pointer;
 }
 
-.footer{
+/* Estilo del pie de página */
+.footer {
     padding: 50px;
     background-color: #fafafa;
 }
 
-.footer-content{
+/* Contenido dentro del pie de página */
+.footer-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* Lista de enlaces en el pie de página */
 .link ul {
     display: flex;
     justify-content: space-between;
 }
 
-.link ul li{
+/* Estilo de los elementos de la lista de enlaces */
+.link ul li {
     margin-right: 50px;
 }
 
+/* Estilo de los enlaces en el pie de página */
 .link ul li a {
     color: #323232;
     font-size: 17px;
 }
 
-.link ul li a:hover{
+/* Efecto hover en los enlaces del pie de página */
+.link ul li a:hover {
     color: #02b1f4;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width:991px) {
+
+    /* Estilo del menú para pantallas pequeñas */
+    .menu {
+        padding: 20px;
+    }
+
+    /* Mostrar el icono del menú en pantallas pequeñas */
+    .menu label {
+        display: initial;
+    }
+
+    /* Ajuste de la barra de navegación en pantallas pequeñas */
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        display: none;
+    }
+
+    /* Ajuste de los elementos del menú en pantallas pequeñas */
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    /* Mostrar el menú cuando está seleccionado en pantallas pequeñas */
+    #menu:checked~.navbar {
+        display: initial;
+    }
+
+    /* Ajuste del encabezado para pantallas pequeñas */
+    .header {
+        min-width: 0vh;
+        padding: 80px 30px 50px 30px;
+    }
+
+    /* Cambiar la dirección del contenido del encabezado a columna en pantallas pequeñas */
+    .header-content {
+        flex-direction: column;
+    }
+
+    /* Ajuste del texto del encabezado en pantallas pequeñas */
+    .header-txt {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    /* Ajuste de la imagen del encabezado en pantallas pequeñas */
+    .header-img {
+        width: 100%;
+    }
+
+    /* Ajuste del ancho de la imagen del encabezado en pantallas pequeñas */
+    .header-img img {
+        width: 100%;
+    }
+
+    /* Ajuste de la sección "Nosotros" para pantallas pequeñas */
+    .about {
+        padding: 30px;
+        flex-direction: column;
+    }
+
+    /* Ajuste de la imagen en la sección "Nosotros" para pantallas pequeñas */
+    .about-img {
+        width: 100%;
+        order: 2;
+    }
+
+    /* Ajuste del texto en la sección "Nosotros" para pantallas pequeñas */
+    .about-txt {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    /* Ajuste de la sección de servicios para pantallas pequeñas */
+    .servicios {
+        padding: 30px;
+    }
+
+    /* Ajuste del contenedor de servicios para pantallas pequeñas */
+    .servicios-content {
+        margin-top: 25px;
+        flex-direction: column;
+    }
+
+    /* Ajuste de cada servicio para pantallas pequeñas */
+    .servicio-1 {
+        margin-bottom: 20px;
+    }
+
+    /* Ajuste del formulario para pantallas pequeñas */
+    .formulario {
+        padding: 30px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* Ajuste del ancho del formulario para pantallas pequeñas */
+    .form {
+        width: 100%;
+    }
+
+    /* Ajuste del pie de página para pantallas pequeñas */
+    .footer {
+        padding: 30px;
+    }
+
+    /* Ajuste del contenido del pie de página para pantallas pequeñas */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Ajuste de la lista de enlaces en el pie de página para pantallas pequeñas */
+    .link ul {
+        flex-direction: column;
+    }
+
+    /* Ajuste de los elementos de la lista de enlaces en el pie de página para pantallas pequeñas */
+    .link ul li {
+        margin: 0 0 15px 0;
+    }
 }
