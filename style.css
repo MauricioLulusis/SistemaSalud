@@ -28,8 +28,7 @@ img {
 /* Estilo del encabezado */
 .header {
     background-color: #fafafa;
-    padding: 50px 0 50px 0;
-    min-height: 15vh;
+    padding: 100px 0 100px 0;
     display: flex;
     align-items: center;
 }
@@ -326,7 +325,6 @@ textarea {
 
 /* Estilos responsivos para pantallas pequeñas */
 @media (max-width:991px) {
-
     /* Estilo del menú para pantallas pequeñas */
     .menu {
         padding: 20px;
