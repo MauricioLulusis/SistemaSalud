@@ -3,7 +3,7 @@
 /* Reiniciar márgenes, rellenos, y establecer box-sizing para todos los elementos */
 * {
     margin: 0;
-    padding: 0%;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
@@ -17,6 +17,7 @@ body {
 /* Ajustar la imagen para que nunca exceda el ancho de su contenedor */
 img {
     max-width: 100%;
+    height: auto;
 }
 
 /* Configurar el contenedor principal con un ancho máximo y centrado */
@@ -28,7 +29,7 @@ img {
 /* Estilo del encabezado */
 .header {
     background-color: #fafafa;
-    padding: 100px 0 100px 0;
+    padding: 100px 0;
     display: flex;
     align-items: center;
 }
@@ -140,7 +141,7 @@ img {
 
 /* Ajustar la imagen de la sección "Nosotros" */
 .about-img img {
-    width: 500%;
+    width: 100%;
     border-radius: 15px;
 }
 
@@ -190,7 +191,8 @@ img {
 .servicio-1 {
     padding: 25px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.01);
-    flex-basis: calc(25%-20px);
+    flex-basis: calc(25% - 20px);
+    margin-bottom: 20px;
 }
 
 /* Iconos en los servicios */
@@ -219,7 +221,8 @@ img {
 /* Estilo general del formulario */
 form {
     padding: 50px;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
@@ -325,17 +328,14 @@ textarea {
 
 /* Estilos responsivos para pantallas pequeñas */
 @media (max-width:991px) {
-    /* Estilo del menú para pantallas pequeñas */
     .menu {
         padding: 20px;
     }
 
-    /* Mostrar el icono del menú en pantallas pequeñas */
     .menu label {
         display: initial;
     }
 
-    /* Ajuste de la barra de navegación en pantallas pequeñas */
     .menu .navbar {
         position: absolute;
         top: 100%;
@@ -345,57 +345,47 @@ textarea {
         display: none;
     }
 
-    /* Ajuste de los elementos del menú en pantallas pequeñas */
     .menu .navbar ul li {
         width: 100%;
     }
 
-    /* Mostrar el menú cuando está seleccionado en pantallas pequeñas */
     #menu:checked~.navbar {
         display: initial;
     }
 
-    /* Ajuste del encabezado para pantallas pequeñas */
     .header {
         min-width: 0vh;
         padding: 80px 30px 50px 30px;
     }
 
-    /* Cambiar la dirección del contenido del encabezado a columna en pantallas pequeñas */
     .header-content {
         flex-direction: column;
     }
 
-    /* Ajuste del texto del encabezado en pantallas pequeñas */
     .header-txt {
         text-align: center;
         width: 100%;
         margin-bottom: 25px;
     }
 
-    /* Ajuste de la imagen del encabezado en pantallas pequeñas */
     .header-img {
         width: 100%;
     }
 
-    /* Ajuste del ancho de la imagen del encabezado en pantallas pequeñas */
     .header-img img {
         width: 100%;
     }
 
-    /* Ajuste de la sección "Nosotros" para pantallas pequeñas */
     .about {
         padding: 30px;
         flex-direction: column;
     }
 
-    /* Ajuste de la imagen en la sección "Nosotros" para pantallas pequeñas */
     .about-img {
         width: 100%;
         order: 2;
     }
 
-    /* Ajuste del texto en la sección "Nosotros" para pantallas pequeñas */
     .about-txt {
         width: 100%;
         margin-left: 0;
@@ -403,52 +393,57 @@ textarea {
         margin-bottom: 25px;
     }
 
-    /* Ajuste de la sección de servicios para pantallas pequeñas */
     .servicios {
         padding: 30px;
     }
 
-    /* Ajuste del contenedor de servicios para pantallas pequeñas */
     .servicios-content {
         margin-top: 25px;
         flex-direction: column;
     }
 
-    /* Ajuste de cada servicio para pantallas pequeñas */
     .servicio-1 {
         margin-bottom: 20px;
+        flex-basis: 100%;
     }
 
-    /* Ajuste del formulario para pantallas pequeñas */
     .formulario {
         padding: 30px;
         margin-top: 0;
         margin-bottom: 0;
     }
 
-    /* Ajuste del ancho del formulario para pantallas pequeñas */
     .form {
         width: 100%;
     }
 
-    /* Ajuste del pie de página para pantallas pequeñas */
     .footer {
         padding: 30px;
     }
 
-    /* Ajuste del contenido del pie de página para pantallas pequeñas */
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
 
-    /* Ajuste de la lista de enlaces en el pie de página para pantallas pequeñas */
     .link ul {
         flex-direction: column;
     }
 
-    /* Ajuste de los elementos de la lista de enlaces en el pie de página para pantallas pequeñas */
     .link ul li {
         margin: 0 0 15px 0;
+    }
+}
+
+/* Mejora de los servicios para pantallas medianas */
+@media (max-width: 767px) {
+    .servicio-1 {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        width: 100%;
+        padding: 20px;
     }
 }

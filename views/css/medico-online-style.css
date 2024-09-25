@@ -56,6 +56,7 @@
     background-color: #007f6e;
 }
 
+/* Estilos para la tabla */
 .styled-table {
     border-collapse: collapse;
     margin: 10px 0; /* Reduce el margen superior e inferior de la tabla */
@@ -72,8 +73,7 @@
     text-align: left;
 }
 
-.styled-table th,
-.styled-table td {
+.styled-table th, .styled-table td {
     padding: 12px 15px;
 }
 
@@ -94,6 +94,7 @@
     color: #009879;
 }
 
+/* Botones */
 .btn {
     background-color: #4CAF50;
     color: white;
@@ -106,6 +107,7 @@
     background-color: #f44336;
 }
 
+/* Estilos duplicados eliminados */
 .styled-table {
     width: 100%;
     border-collapse: collapse;
@@ -142,6 +144,7 @@
     color: #009879;
 }
 
+/* Estilos para el contenedor de búsqueda */
 .search-container {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -167,10 +170,20 @@
 
 /* Estilos responsivos para pantallas más pequeñas */
 @media (max-width: 600px) {
+    .turnero-form {
+        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    }
+
     .search-container input {
         font-size: 18px;
         padding: 12px 20px;
     }
+
+    .turnero-form .btn {
+        grid-column: 1; /* Ajusta el botón para ocupar una sola columna */
+    }
+
+    .styled-table {
+        font-size: 14px; /* Ajusta el tamaño de fuente de la tabla para pantallas más pequeñas */
+    }
 }
-
-
