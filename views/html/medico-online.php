@@ -85,14 +85,14 @@
     <footer class="footer">
         <div class="footer-content container">
             <div class="link">
-                <a href="index.html" class="medicina-integral">Medicina Integral</a>
+                <a href="index.php" class="medicina-integral">Medicina Integral</a>
             </div>
             <div class="link">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="nosotros.php">Nosotros</a></li>
+                    <li><a href="servicios.php">Servicios</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                 </ul>
             </div>
         </div>

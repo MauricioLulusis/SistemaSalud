@@ -1,3 +1,10 @@
+<?php
+session_start(); // Inicia la sesión
+
+// Verifica si el usuario ha iniciado sesión
+$isLoggedIn = isset($_SESSION['UsuarioID']);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,20 +28,26 @@
             </label>
             <nav class="navbar">
                 <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Nosotros</a></li>
-                    <li><a href="">Servicios</a></li>
-                    <li><a href="Views/html/medico-online.html">Médico online</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="Views/html/medico-online.php">Médico online</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <!-- Mostrar el enlace "Cerrar sesión" si el usuario está logueado -->
+                    <?php if ($isLoggedIn): ?>
+                        <li><a href="logout.php">Cerrar sesión</a></li>
+                    <?php else: ?>
+                        <li><a href="views/html/login.php">Iniciar sesión</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
 
         <div class="header-content container">
             <div class="header-txt">
-                <h1>Intuit Salud</h1>
+                <h1>MediCare+</h1>
                 <p>
-                    En Intuit Salud, nos enfocamos en ofrecer atención médica integral y personalizada, utilizando
+                    En MediCare+, nos enfocamos en ofrecer atención médica integral y personalizada, utilizando
                     tecnología avanzada para cuidar de tu bienestar. Nuestro equipo está comprometido con la salud
                     preventiva y un trato humano, asegurando que cada consulta sea una oportunidad para mejorar tu
                     calidad de vida. Tu salud es nuestra prioridad.
@@ -48,7 +61,6 @@
     </header>
 
     <section class="about container">
-
         <div class="about-img">
             <img src="images/about.png" alt="imagen de consultorio">
         </div>
@@ -67,7 +79,7 @@
                 equipo. Esto nos permite estar a la vanguardia en tratamientos y tecnologías, garantizando que nuestros
                 pacientes reciban el mejor cuidado posible. Además, nos comprometemos a mantener una comunicación clara
                 y abierta, asegurando que nuestros pacientes comprendan su estado de salud y las opciones disponibles
-                para su tratamiento. En Intuit Salud, tu salud es nuestro compromiso.
+                para su tratamiento. En MediCare+, tu salud es nuestro compromiso.
             </p>
         </div>
     </section>
@@ -75,47 +87,45 @@
     <main class="servicios">
         <h2>Servicios</h2>
         <div class="servicios-content container">
-
             <div class="servicio-1">
                 <i class="fa-sharp fa-solid fa-hospital-user"></i>
-                <h3>Pediatria</h3>
+                <h3>Pediatría</h3>
             </div>
             <div class="servicio-1">
                 <i class="fa-sharp fa-solid fa-stethoscope"></i>
-                <h3>Ginecologia</h3>
+                <h3>Ginecología</h3>
             </div>
             <div class="servicio-1">
                 <i class="fa-solid fa-bed-pulse"></i>
-                <h3>Dermatologia</h3>
+                <h3>Dermatología</h3>
             </div>
             <div class="servicio-1">
                 <i class="fa-solid fa-hospital"></i>
                 <h3>Cardiología</h3>
             </div>
-
         </div>
     </main>
 
     <section class="formulario container">
-        <form method="post" autocomplete="off">
+        <form method="POST" action="send.php" autocomplete="off">
             <h2>Agenda consulta</h2>
             <div class="input-group">
                 <div class="input-container">
-                    <input type="text" name="name" placeholder="Nombre y Apellido">
+                    <input type="text" name="name" placeholder="Nombre y Apellido" required>
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="input-container">
-                    <input type="tel" name="phone" placeholder="Telefono Celular">
+                    <input type="tel" name="phone" placeholder="Teléfono Celular" required>
                     <i class="fa-solid fa-phone"></i>
                 </div>
                 <div class="input-container">
-                    <input type="email" name="email" placeholder="Correo">
+                    <input type="email" name="email" placeholder="Correo" required>
                     <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="input-container">
-                    <textarea name="message" placeholder="Detalles de la consulta"></textarea>
+                    <textarea name="message" placeholder="Detalles de la consulta" required></textarea>
                 </div>
-                <input type="submit" name="send" class="btn" onClick="myFunction()">
+                <input type="submit" name="send" class="btn" value="Enviar">
             </div>
         </form>
     </section>
@@ -127,24 +137,19 @@
             </div>
             <div class="link">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="index.php">Inicio</a></li>
                     <li><a href="#">Nosotros</a></li>
                     <li><a href="#">Servicios</a></li>
                     <li><a href="#">Contacto</a></li>
+                    <!-- Mostrar el enlace "Cerrar sesión" si está logueado -->
+                    <?php if ($isLoggedIn): ?>
+                        <li><a href="logout.php">Cerrar sesión</a></li>
+                    <?php else: ?>
+                        <li><a href="views/html/login.php">Iniciar sesión</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </footer>
-
-    <?php
-        include("send.php");
-    ?> 
-
-    <script>
-        function myFunction() {
-            window.location.href = "http://localhost/SistemaSalud"
-        }
-    </script>
-    
 </body>
 </html>
