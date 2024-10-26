@@ -1,0 +1,82 @@
+/* Estilos para login.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('../../images/login.png'); /* Ajusta el path si es necesario */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.8); /* Fondo más claro y semi-transparente */
+    padding: 40px;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f2f2f2; /* Fondo igual para todos los campos */
+    color: #333;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #aaa; /* Color del placeholder para mayor visibilidad */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+button[type="submit"],
+button.register-button {
+    width: 48%; /* Ambos botones tienen el mismo ancho */
+    padding: 10px; /* Reducimos el padding para ajustar el contenido */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px; /* Reducimos el tamaño de la fuente */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+button[type="submit"]:hover,
+button.register-button:hover {
+    background-color: #0056b3;
+}

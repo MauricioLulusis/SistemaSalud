@@ -29,10 +29,9 @@ $isLoggedIn = isset($_SESSION['UsuarioID']);
             <nav class="navbar">
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Nosotros</a></li>
                     <li><a href="#">Servicios</a></li>
+                    <li><a href="views/html/historial-turnos.php">Historial de turnos</a></li> <!-- Enlace añadido -->
                     <li><a href="Views/html/medico-online.php">Médico online</a></li>
-                    <li><a href="#">Contacto</a></li>
                     <!-- Mostrar el enlace "Cerrar sesión" si el usuario está logueado -->
                     <?php if ($isLoggedIn): ?>
                         <li><a href="logout.php">Cerrar sesión</a></li>
@@ -138,9 +137,8 @@ $isLoggedIn = isset($_SESSION['UsuarioID']);
             <div class="link">
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Nosotros</a></li>
                     <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="historial-turnos.php">Historial de Turnos</a></li> <!-- Enlace añadido -->
                     <!-- Mostrar el enlace "Cerrar sesión" si está logueado -->
                     <?php if ($isLoggedIn): ?>
                         <li><a href="logout.php">Cerrar sesión</a></li>

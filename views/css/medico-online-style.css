@@ -1,189 +1,448 @@
-/* Estilos para la tabla en Medico Online */
-.medico-online {
-    margin-top: 0px; /* Elimina el margen superior */
-    padding-top: 0px; /* Elimina el padding superior */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra el contenido horizontalmente */
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
-/* Estilos para el formulario de turnero */
-.turnero-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    margin-bottom: 30px;
-    background: #fff;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Header */
+.header {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px 0;
+    margin-bottom: 2rem;
+}
+
+.header .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.medicina-integral {
+    font-size: 28px;
+    font-weight: 800;
+    color: #02b1f4; /* Azul para "Medicina Integral" */
+    text-transform: uppercase;
+}
+
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: .25rem;
+}
+
+.navbar ul li a {
+    color: #333; /* Color oscuro para los enlaces */
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 15px;
+}
+
+.navbar ul li a:hover {
+    color: #02b1f4; /* Cambiar a azul claro en hover */
+    border-bottom: 2px solid #02b1f4; /* Subrayado azul en hover */
+}
+
+/* Ocultar el checkbox y el icono del menú (cuadro y barras) */
+#menu, label[for="menu"] {
+    display: none; /* Ocultar ambos */
+}
+
+/* Formulario de Turnos */
+form {
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Limita el ancho máximo del formulario */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    background-color: none; /* Sin fondo */
 }
 
-.turnero-form .form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.turnero-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.turnero-form input, 
-.turnero-form select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del input */
-    width: 100%; /* Hace que los elementos ocupen el 100% del ancho disponible */
-}
-
-.turnero-form .btn {
-    grid-column: span 2;
-    padding: 10px 20px;
-    background-color: #009879;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
+form h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
     text-align: center;
 }
 
-.turnero-form .btn:hover {
-    background-color: #007f6e;
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 16px;
 }
 
-/* Estilos para la tabla */
-.styled-table {
-    border-collapse: collapse;
-    margin: 10px 0; /* Reduce el margen superior e inferior de la tabla */
-    font-size: 18px;
-    font-family: 'Arial', sans-serif;
-    min-width: 400px;
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
     width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-
-.styled-table th, .styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-}
-
-/* Botones */
-.btn {
-    background-color: #4CAF50;
-    color: white;
     padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: none; /* Sin fondo */
+}
+
+button, .confirmar-turno-btn {
+    width: 130px;
+    padding: 8px 12px;
+    background-color: #02b1f4;
+    color: white;
+    font-size: 14px;
+    text-align: center;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.btn.cancel {
-    background-color: #f44336;
+button:hover, .confirmar-turno-btn:hover {
+    background-color: #0284c7;
 }
 
-/* Estilos duplicados eliminados */
+/* Botones Eliminar y Modificar */
+button.eliminar-btn, 
+button.modificar-btn {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: none; /* Sin fondo */
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button.eliminar-btn:hover, 
+button.modificar-btn:hover {
+    background-color: #0284c7;
+}
+
+/* Campos de fecha y hora */
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    background-color: none; /* Sin fondo */
+}
+
+/* Tabla de Turnos */
 .styled-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 20px 0;
     font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
 .styled-table thead tr {
-    background-color: #009879;
-    color: white;
-    text-align: left;
-    font-weight: bold;
+    background-color: #02b1f4;
+    color: #ffffff;
 }
 
 .styled-table th, .styled-table td {
     padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+    border: 1px solid #dddddd;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
+.styled-table tbody tr:hover {
+    background-color: #f0f0f0;
 }
 
-/* Estilos para el contenedor de búsqueda */
-.search-container {
-    margin-top: 30px;
-    margin-bottom: 30px;
+/* Footer */
+.footer {
+    background-color: #02b1f4;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer a {
+    color: white;
+    font-size: 18px;
+}
+
+.footer-content {
     display: flex;
     justify-content: center;
 }
 
-.search-container input {
-    padding: 15px 25px;
-    font-size: 20px;
-    border: 2px solid #009879;
-    border-radius: 50px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    outline: none;
-    transition: border-color 0.3s ease;
+.footer .link ul {
+    display: flex;
 }
 
-.search-container input:focus {
-    border-color: #007f6e;
-}
-
-/* Estilos responsivos para pantallas más pequeñas */
-@media (max-width: 600px) {
-    .turnero-form {
-        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+/* Responsivo: Para pantallas más pequeñas */
+@media (max-width: 991px) {
+    .header .menu {
+        flex-direction: column;
+        align-items: center;
     }
-
-    .search-container input {
-        font-size: 18px;
-        padding: 12px 20px;
+    
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
     }
-
-    .turnero-form .btn {
-        grid-column: 1; /* Ajusta el botón para ocupar una sola columna */
-    }
-
-    .styled-table {
-        font-size: 14px; /* Ajusta el tamaño de fuente de la tabla para pantallas más pequeñas */
+    
+    .navbar ul li {
+        margin: 10px 0;
     }
 }
+
+/* Placeholder and Image */
+::placeholder {
+    color: #a8a8a8;
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer */
+.footer {
+    background-color: #fafafa; /* Fondo claro */
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #ddd; /* Línea superior sutil */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Alinear elementos horizontalmente */
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto; /* Centrar el contenido */
+    flex-wrap: wrap;
+}
+
+.footer a {
+    color: #333; /* Color oscuro para los enlaces */
+    font-size: 18px;
+    text-transform: capitalize;
+    margin: 0 15px; /* Espaciado entre los enlaces */
+}
+
+.footer a:hover {
+    color: #02b1f4; /* Cambiar a azul claro en hover */
+}
+
+.footer .link {
+    display: flex;
+}
+
+.footer .link ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer .link ul li {
+    list-style: none;
+    margin: 0 20px; /* Espaciado entre las opciones del menú */
+}
+
+/* Responsivo: Ajustes para pantallas pequeñas */
+@media (max-width: 991px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .link ul {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .footer .link ul li {
+        margin: 10px 0; /* Ajuste de margen para dispositivos móviles */
+    }
+}
+/* Eliminar el subrayado de los enlaces seleccionados o activos en el header */
+.navbar ul li a {
+    color: #333; /* Mantener el color del texto */
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    text-decoration: none; /* Elimina el subrayado de todos los estados */
+    border-bottom: 2px solid transparent; /* Transición suave */
+}
+
+/* Hover effect: sólo mostrar el subrayado cuando el ratón pasa por encima */
+.navbar ul li a:hover {
+    color: #02b1f4; /* Cambiar a azul claro en hover */
+    border-bottom: 2px solid #02b1f4; /* Subrayado en hover */
+}
+
+/* Eliminar el subrayado en los enlaces cuando están seleccionados */
+.navbar ul li a:active, 
+.navbar ul li a:focus, 
+.navbar ul li a:visited {
+    text-decoration: none; /* Asegura que no haya subrayado en estos estados */
+    border-bottom: none; /* Evita la línea azul debajo cuando está seleccionado */
+}
+/* Footer */
+.footer {
+    background-color: #fafafa; /* Fondo claro */
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #ddd; /* Línea superior sutil */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Alinear elementos horizontalmente */
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto; /* Centrar el contenido */
+    flex-wrap: wrap;
+}
+
+.footer .medicina-integral {
+    font-size: 28px; /* Mismo tamaño de fuente que en el header */
+    font-weight: 800; /* Mismo grosor */
+    color: #02b1f4; /* Mismo color azul que en el header */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    margin-bottom: 0;
+}
+
+.footer .link ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer .link ul li {
+    list-style: none;
+    margin: 0 20px; /* Espaciado entre las opciones del menú */
+}
+
+.footer .link ul li a {
+    color: #333; /* Color oscuro para los enlaces */
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.footer .link ul li a:hover {
+    color: #02b1f4; /* Cambiar a azul claro en hover */
+}
+
+/* Responsivo: Ajustes para pantallas pequeñas */
+@media (max-width: 991px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .link ul {
+        flex-direction: column;
+    }
+
+    .footer .link ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Contenedor general */
+.container {
+    max-width: 1200px; /* Ajustar el mismo ancho para el header y el footer */
+    margin: 0 auto; /* Centramos ambos elementos */
+    padding: 0 20px; /* Pequeño padding para evitar que se peguen a los lados */
+}
+
+/* Footer */
+.footer {
+    background-color: #fafafa; /* Fondo claro */
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Asegurarse de que el footer tenga el mismo ancho que el header */
+    margin: 0 auto; /* Centramos el contenido */
+    flex-wrap: wrap;
+}
+
+.footer .medicina-integral {
+    font-size: 28px; /* Mismo tamaño de fuente que en el header */
+    font-weight: 800; /* Mismo grosor */
+    color: #02b1f4; /* Mismo color azul que en el header */
+    text-transform: uppercase;
+}
+
+.footer .link ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer .link ul li {
+    list-style: none;
+    margin: 0 20px; /* Espaciado entre las opciones del menú */
+}
+
+.footer .link ul li a {
+    color: #333;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.footer .link ul li a:hover {
+    color: #02b1f4;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 991px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .link ul {
+        flex-direction: column;
+    }
+
+    .footer .link ul li {
+        margin: 10px 0;
+    }
+}
+
