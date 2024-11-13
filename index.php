@@ -138,7 +138,7 @@ $isLoggedIn = isset($_SESSION['UsuarioID']);
             <div class="link">
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="../../views/html/chat-online.php">Chat online</a></li>
+                    <li><a href="views/html/chat-online.php">Chat online</a></li>
                     <li><a href="index.php">Historial de Turnos</a></li>
                     <?php if ($isLoggedIn): ?>
                         <li><a href="logout.php">Cerrar sesión</a></li>

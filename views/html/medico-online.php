@@ -313,5 +313,3 @@ $result_disponibles = mysqli_query($conexion, $query_disponibles);
 </body>
 
 </html>
-
-Este es mi medico online 
