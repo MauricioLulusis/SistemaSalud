@@ -446,3 +446,32 @@ img {
     }
 }
 
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #000;
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.6s ease-out;
+}
+.section-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.section-title::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 110%;
+    font-size: 0.9rem;
+    color: #888;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.section-title:hover::after {
+    opacity: 1;
+}

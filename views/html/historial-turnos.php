@@ -1,8 +1,8 @@
-<?php 
+<?php
 session_start();
 include("../../config/conexion.php");
 
-// Obtener todos los registros del historial de turnos
+// Consultar historial de turnos
 $query_historial = "
     SELECT h.HistorialID, t.TurnoID, u.Nombre AS nombreUsuario, m.Nombre AS nombreMedico, 
            h.FechaTurno, h.EstadoTurno, h.Comentario, h.FechaIngreso
@@ -11,9 +11,9 @@ $query_historial = "
     JOIN Usuarios u ON t.UsuarioID = u.UsuarioID
     JOIN Medicos m ON t.MedicoID = m.MedicoID
     ORDER BY h.FechaIngreso DESC";
-
 $result_historial = mysqli_query($conexion, $query_historial);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -36,9 +36,9 @@ $result_historial = mysqli_query($conexion, $query_historial);
             <nav class="navbar">
                 <ul>
                     <li><a href="../../index.php">Inicio</a></li>
-                    <li><a href="../../servicios.php">Servicios</a></li>
+                    <li><a href="../../views/html/chat-online.php">Chat online</a></li>
                     <li><a href="../../views/html/medico-online.php">Médico online</a></li>
-                    <li><a href="historial-turnos.php">Historial de Turnos</a></li> <!-- Enlace añadido -->
+                    <li><a href="historial-turnos.php">Historial de Turnos</a></li>
                     <li><a href="../../logout.php">Cerrar sesión</a></li>
                 </ul>
             </nav>

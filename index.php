@@ -16,6 +16,7 @@ $isLoggedIn = isset($_SESSION['UsuarioID']);
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="views/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -29,9 +30,9 @@ $isLoggedIn = isset($_SESSION['UsuarioID']);
             <nav class="navbar">
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="views/html/historial-turnos.php">Historial de turnos</a></li> <!-- Enlace añadido -->
-                    <li><a href="Views/html/medico-online.php">Médico online</a></li>
+                    <li><a href="views/html/chat-online.php">Chat online</a></li>
+                    <li><a href="views/html/historial-turnos.php">Historial de turnos</a></li>
+                    <li><a href="views/html/medico-online.php">Médico online</a></li>
                     <!-- Mostrar el enlace "Cerrar sesión" si el usuario está logueado -->
                     <?php if ($isLoggedIn): ?>
                         <li><a href="logout.php">Cerrar sesión</a></li>
@@ -107,7 +108,7 @@ $isLoggedIn = isset($_SESSION['UsuarioID']);
 
     <section class="formulario container">
         <form method="POST" action="send.php" autocomplete="off">
-            <h2>Agenda consulta</h2>
+            <h2>Más información</h2>
             <div class="input-group">
                 <div class="input-container">
                     <input type="text" name="name" placeholder="Nombre y Apellido" required>
@@ -137,9 +138,8 @@ $isLoggedIn = isset($_SESSION['UsuarioID']);
             <div class="link">
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="historial-turnos.php">Historial de Turnos</a></li> <!-- Enlace añadido -->
-                    <!-- Mostrar el enlace "Cerrar sesión" si está logueado -->
+                    <li><a href="../../views/html/chat-online.php">Chat online</a></li>
+                    <li><a href="index.php">Historial de Turnos</a></li>
                     <?php if ($isLoggedIn): ?>
                         <li><a href="logout.php">Cerrar sesión</a></li>
                     <?php else: ?>
@@ -149,5 +149,45 @@ $isLoggedIn = isset($_SESSION['UsuarioID']);
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mostrar la notificación de SweetAlert según el parámetro en la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const mensaje = urlParams.get('mensaje');
+
+        if (mensaje) {
+            let title = '';
+            let text = '';
+            let icon = '';
+
+            switch (mensaje) {
+                case 'success':
+                    title = '¡Éxito!';
+                    text = 'Datos enviados correctamente.';
+                    icon = 'success';
+                    break;
+                case 'error':
+                    title = '¡Error!';
+                    text = 'Error al enviar los datos.';
+                    icon = 'error';
+                    break;
+                case 'incomplete':
+                    title = '¡Advertencia!';
+                    text = 'Por favor, complete todos los campos.';
+                    icon = 'warning';
+                    break;
+                default:
+                    break;
+            }
+
+            Swal.fire({
+                title: title,
+                text: text,
+                icon: icon,
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    </script>
+
 </body>
 </html>

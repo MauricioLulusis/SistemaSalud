@@ -3,6 +3,7 @@ session_start();
 include("../../config/conexion.php");
 
 $mensaje = ""; // Variable para almacenar el mensaje de estado
+$nombrePaciente = isset($_SESSION['Nombre']) ? $_SESSION['Nombre'] : ''; // Inicializar el nombre del paciente
 
 // Alta de turnos (Crear)
 if (isset($_POST['crear_turno'])) {
@@ -17,7 +18,7 @@ if (isset($_POST['crear_turno'])) {
     $query_verificar = "SELECT COUNT(*) AS total 
                         FROM Turnos 
                         WHERE MedicoID = '$medico' 
-                          AND EspecialidadID = '$especialidad'  -- Verificación por especialidad
+                          AND EspecialidadID = '$especialidad'
                           AND Fecha = '$fecha' 
                           AND Hora = '$hora'";
     $result_verificar = mysqli_query($conexion, $query_verificar);
@@ -40,7 +41,7 @@ if (isset($_POST['crear_turno'])) {
 
 // Eliminar turno
 if (isset($_POST['eliminar_turno'])) {
-    $turnoID = mysqli_real_escape_string($conexion, $_POST['turnoID']);// Añade esta línea para verificar el TurnoID
+    $turnoID = mysqli_real_escape_string($conexion, $_POST['turnoID']);
     
     // Consulta para eliminar el turno de la base de datos
     $query_eliminar = "DELETE FROM Turnos WHERE TurnoID = '$turnoID'";
@@ -128,9 +129,9 @@ $result_disponibles = mysqli_query($conexion, $query_disponibles);
             <nav class="navbar">
                 <ul>
                     <li><a href="../../index.php">Inicio</a></li>
-                    <li><a href="../../servicios.php">Servicios</a></li>
+                    <li><a href="../../views/html/chat-online.php">Chat online</a></li>
+                    <li><a href="../../views/html/historial-turnos.php">Historial de turnos</a></li> 
                     <li><a href="../../views/html/medico-online.php">Médico online</a></li>
-                    <li><a href="historial-turnos.php">Historial de turnos</a></li> 
                     <li><a href="../../logout.php">Cerrar sesión</a></li>
                 </ul>
             </nav>
@@ -138,11 +139,9 @@ $result_disponibles = mysqli_query($conexion, $query_disponibles);
     </header>
 
     <div class="container">
-        <h2></h2>
-
+        <h3 class="section-title" data-title="Crear un nuevo turno">Crear Turno</h3>
         <!-- Formulario para Crear Turno -->
         <form method="POST" action="medico-online.php">
-            <h3>Crear Turno</h3>
             <label>Médico:</label>
             <select name="medico" id="medico" required>
                 <option value="">Seleccione un médico</option>
@@ -164,12 +163,12 @@ $result_disponibles = mysqli_query($conexion, $query_disponibles);
             <label>Hora:</label>
             <input type="time" name="hora" required><br>
             <label>Nombre del Paciente:</label>
-            <input type="text" name="nombre_paciente" value="<?php echo $_SESSION['Nombre']; ?>" required><br>
+            <input type="text" name="nombre_paciente" value="<?php echo $nombrePaciente; ?>" required><br>
             <button type="submit" name="crear_turno">Crear Turno</button>
         </form>
 
+        <h3 class="section-title" data-title="Todos los turnos registrados">Listado de Turnos</h3>
         <!-- Tabla de Turnos -->
-        <h3>Listado de Turnos</h3>
         <table class="styled-table">
             <thead>
                 <tr>
@@ -215,8 +214,8 @@ $result_disponibles = mysqli_query($conexion, $query_disponibles);
             </tbody>
         </table>
 
+        <h3 class="section-title" data-title="Horarios disponibles">Turnos Disponibles</h3>
         <!-- Tabla de Turnos Disponibles -->
-        <h3>Turnos Disponibles</h3>
         <table class="styled-table">
             <thead>
                 <tr>
@@ -249,62 +248,70 @@ $result_disponibles = mysqli_query($conexion, $query_disponibles);
             <div class="link">
                 <ul>
                     <li><a href="../../index.php">Inicio</a></li>
-                    <li><a href="../../nosotros.php">Nosotros</a></li>
-                    <li><a href="../../servicios.php">Servicios</a></li>
+                    <li><a href="../../index.php">Nosotros</a></li>
+                    <li><a href="../../views/html/chat-online.php">Servicios</a></li>
                     <li><a href="../../views/html/medico-online.php">Médico online</a></li>
-                    <li><a href="../../contacto.php">Contacto</a></li>
+                    <li><a href="../../index.php">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
     <script>
-    // Cargar las especialidades del médico seleccionado
-    $('#medico').on('change', function() {
-    var medicoID = $(this).val();
-    if (medicoID) {
-        $.ajax({
-            url: 'obtener_especialidades.php',
-            type: 'POST',
-            data: { medico_id: medicoID },
-            dataType: 'json',
-            success: function(response) {
-                console.log(response); // Depuración: verificar la respuesta del servidor
+        // Animar los títulos al cargar la página
+        document.addEventListener("DOMContentLoaded", () => {
+            const titles = document.querySelectorAll(".section-title");
 
-                $('#especialidad').empty(); // Limpiar las opciones actuales
-                $('#especialidad').append('<option value="">Seleccione una especialidad</option>'); // Opción por defecto
+            titles.forEach((title) => {
+                setTimeout(() => {
+                    title.classList.add("visible");
+                }, 200);
+            });
+        });
 
-                // Verificar que la respuesta sea correcta
-                if (response.length > 0) {
-                    // Llenar el select con las especialidades obtenidas
-                    $.each(response, function(index, especialidad) {
-                        $('#especialidad').append('<option value="' + especialidad['EspecialidadID'] + '">' + especialidad['Nombre'] + '</option>');
-                    });
-                } else {
-                    $('#especialidad').append('<option value="">No hay especialidades disponibles</option>');
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error("Error en la solicitud de especialidades: ", error);
+        // Cargar las especialidades del médico seleccionado
+        $('#medico').on('change', function() {
+            var medicoID = $(this).val();
+            if (medicoID) {
+                $.ajax({
+                    url: 'obtener_especialidades.php',
+                    type: 'POST',
+                    data: { medico_id: medicoID },
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#especialidad').empty();
+                        $('#especialidad').append('<option value="">Seleccione una especialidad</option>');
+                        if (response.length > 0) {
+                            $.each(response, function(index, especialidad) {
+                                $('#especialidad').append('<option value="' + especialidad['EspecialidadID'] + '">' + especialidad['Nombre'] + '</option>');
+                            });
+                        } else {
+                            $('#especialidad').append('<option value="">No hay especialidades disponibles</option>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error en la solicitud de especialidades: ", error);
+                    }
+                });
+            } else {
+                $('#especialidad').empty();
+                $('#especialidad').append('<option value="">Seleccione un médico primero</option>');
             }
         });
-    } else {
-        $('#especialidad').empty(); // Limpiar si no hay médico seleccionado
-        $('#especialidad').append('<option value="">Seleccione un médico primero</option>');
-    }
-});
 
-    // Mostrar la notificación de SweetAlert después de una operación
-    <?php if ($mensaje != ""): ?>
-        Swal.fire({
-            title: '¡Notificación!',
-            text: '<?php echo $mensaje; ?>',
-            icon: '<?php echo strpos($mensaje, "Error") === false ? "success" : "error"; ?>',
-            confirmButtonText: 'Aceptar'
-        });
-    <?php endif; ?>
+        // Mostrar la notificación de SweetAlert después de una operación
+        <?php if ($mensaje != ""): ?>
+            Swal.fire({
+                title: '¡Notificación!',
+                text: '<?php echo $mensaje; ?>',
+                icon: '<?php echo strpos($mensaje, "Error") === false ? "success" : "error"; ?>',
+                confirmButtonText: 'Aceptar'
+            });
+        <?php endif; ?>
     </script>
 
 </body>
 
 </html>
+
+Este es mi medico online 

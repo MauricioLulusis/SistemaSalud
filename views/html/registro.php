@@ -31,9 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error: Este correo ya está registrado.";
         exit();
     } else {
+        // Encriptar la contraseña antes de guardarla
+        $contraseña_hash = password_hash($contraseña, PASSWORD_DEFAULT);
+
         // Insertar el nuevo usuario en la tabla, incluyendo Nombre, Correo, Contraseña y FechaIngreso
-        $insert_query = "INSERT INTO Usuarios (Nombre, Correo, Contraseña, FechaIngreso) VALUES ('$nombre', '$correo', '$contraseña', '$fecha_ingreso')";
-        
+        $insert_query = "INSERT INTO Usuarios (Nombre, Correo, Contraseña, FechaIngreso) VALUES ('$nombre', '$correo', '$contraseña_hash', '$fecha_ingreso')";
+
         if (mysqli_query($conexion, $insert_query)) {
             echo "Registro exitoso. Ahora puedes iniciar sesión.";
             header("Location: login.php");
