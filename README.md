@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto es un sistema de salud orientado a la gestión de turnos médicos en línea. El sistema permite a los usuarios visualizar los turnos disponibles de diferentes médicos, así como también la posibilidad de reservar un turno a través de un formulario en la sección de "Médico Online".
+Este proyecto es un sistema de salud orientado a la gestión de turnos médicos en línea y a la comunicación directa con un medico que me brinde información sobre mi situación actual y en que condiciones estoy. El sistema permite a los usuarios visualizar los turnos disponibles de diferentes médicos, así como también la posibilidad de reservar un turno a través de un formulario en la sección de "Médico Online" como también asi la posibilidad de conectarme interactivamente por un chat con un médico en linea.
 
 ## Características
 

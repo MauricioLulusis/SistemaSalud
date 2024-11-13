@@ -61,7 +61,6 @@
                     <li><a href="../../index.php">Nosotros</a></li>
                     <li><a href="../../views/html/chat-online.php">Chat online</a></li>
                     <li><a href="../../views/html/medico-online.php">Médico online</a></li>
-                    <li><a href="../../index.php">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -78,10 +77,10 @@
                 "cita": "Puedes agendar tu cita llamando al 📞 0800-123-4567 o visitando nuestra página web 🌐.",
                 "gracias": "¡De nada! 💙 ¿Algo más en lo que pueda ayudarte?",
                 "adiós": "¡Hasta luego! Que tengas un excelente día. 🌟",
-                "dolor de cabeza": "😔 El dolor de cabeza puede tener muchas causas. ¿Desde cuándo lo sientes? 🧠"
-                "tengo problemas de usuario" : "Si tienes problemas de usuario, aguarda y en breve nos comunicaremos"
-                "ambulancia": "El numero de emergencia es *111📞"
-                "ubicacion": "Usted se encuentra en Posadas- Misiones"
+                "dolor de cabeza": "😔 El dolor de cabeza puede tener muchas causas. ¿Desde cuándo lo sientes? 🧠",
+                "tengo problemas de usuario" : "Si tienes problemas de usuario, aguarda y en breve nos comunicaremos",
+                "ambulancia": "El numero de emergencia es *111📞",
+                "ubicacion": "Usted se encuentra en Posadas- Misiones",
                 "ayuda": "Si necesitas atención, dirigete a tu centro mas cercano😊"
             };
 

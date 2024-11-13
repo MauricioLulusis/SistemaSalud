@@ -37,8 +37,8 @@ $result_historial = mysqli_query($conexion, $query_historial);
                 <ul>
                     <li><a href="../../index.php">Inicio</a></li>
                     <li><a href="../../views/html/chat-online.php">Chat online</a></li>
-                    <li><a href="../../views/html/medico-online.php">Médico online</a></li>
                     <li><a href="historial-turnos.php">Historial de Turnos</a></li>
+                    <li><a href="../../views/html/medico-online.php">Médico online</a></li>
                     <li><a href="../../logout.php">Cerrar sesión</a></li>
                 </ul>
             </nav>
@@ -86,12 +86,11 @@ $result_historial = mysqli_query($conexion, $query_historial);
                 <a href="#" class="medicina-integral">Medicina Integral</a>
             </div>
             <div class="link">
-                <ul>
+            <ul>
                     <li><a href="../../index.php">Inicio</a></li>
-                    <li><a href="../../nosotros.php">Nosotros</a></li>
-                    <li><a href="../../servicios.php">Servicios</a></li>
+                    <li><a href="../../index.php">Nosotros</a></li>
+                    <li><a href="../../views/html/chat-online.php">Chat online</a></li>
                     <li><a href="../../views/html/medico-online.php">Médico online</a></li>
-                    <li><a href="historial-turnos.php">Historial de Turnos</a></li> <!-- Enlace añadido -->
                 </ul>
             </div>
         </div>
